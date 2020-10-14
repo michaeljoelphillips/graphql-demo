@@ -1,0 +1,26 @@
+# php -S 0.0.0.0:8888 -t public/
+
+query {
+  characters {
+    name
+    quotes {
+      phrase
+    }
+  }
+}
+
+mutation($input: AddCharacterInput!) {
+  addCharacter(input: $input) {
+    name
+    quotes {
+      appearance,
+      phrase
+    }
+  }
+}
+
+{
+  "input": {
+    "name": "Obi-Wan"
+  }
+}

@@ -1,0 +1,45 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  characters: [Character]
+}
+
+type Mutation {
+  addQuote(input: AddQuoteInput!): Character
+  addCharacter(input: AddCharacterInput!): Character
+}
+
+type Character {
+  name: String!
+  quotes: [Quote!]
+}
+
+type Quote {
+  phrase: String!
+  appearance: Episode!
+}
+
+enum Episode {
+  I
+  II
+  III
+  IV
+  V
+  VI
+  VII
+  VIII
+  IX
+}
+
+input AddCharacterInput {
+  name: String!
+}
+
+input AddQuoteInput {
+  characterName: String!
+  phrase: String!
+  appearance: Episode!
+}
