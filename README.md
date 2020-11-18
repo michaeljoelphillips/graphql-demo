@@ -15,7 +15,7 @@ composer install
 php -S 0.0.0.0:8888 -t public/
 
 # Launch the GraphQL browser client
-firefox public/graphiql.html
+firefox http://localhost:8888/graphiql.html
 ```
 
 # Resources
